@@ -5,9 +5,7 @@ import {
   getIconBgClass, 
   getIconTextClass, 
   getBgClass, 
-  ColorCategory,
-  getTimelineBgClass,
-  getBaseBg
+  ColorCategory
 } from '@/app/utils/tailwind-helper';
 
 // Expertise data

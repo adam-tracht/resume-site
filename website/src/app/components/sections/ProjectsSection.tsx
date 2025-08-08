@@ -5,17 +5,12 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { VideoModal } from '@/app/components/ui/VideoModal';
 import { 
-  ColorCategory, 
   getBgClass, 
   getIconBgClass, 
   getIconTextClass 
 } from '@/app/utils/tailwind-helper';
 
 // Define project types
-type Technology = {
-  name: string;
-  color: string;
-};
 
 type Project = {
   id: string;

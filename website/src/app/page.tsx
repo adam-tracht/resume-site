@@ -1,4 +1,4 @@
-import Image from "next/image";
+// No need for Image import here
 import { HeroSection } from "./components/sections/HeroSection";
 import { ExperienceSection } from "./components/sections/ExperienceSection";
 import { ExpertiseSection } from "./components/sections/ExpertiseSection";

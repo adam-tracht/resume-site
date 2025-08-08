@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
 
@@ -350,9 +350,9 @@ declare global {
       send: (
         serviceId: string,
         templateId: string,
-        templateParams: Record<string, any>,
+        templateParams: Record<string, unknown>,
         publicKey: string
-      ) => Promise<any>;
+      ) => Promise<unknown>;
     };
   }
 }

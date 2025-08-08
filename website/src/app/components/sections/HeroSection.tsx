@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
-import { ColorCategory, getBgClass, getIconTextClass } from '@/app/utils/tailwind-helper';
+// No tailwind helpers needed in this file
 
 export function HeroSection() {
   return (
@@ -42,7 +42,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <p className="text-base md:text-lg text-foreground/80 mb-6 max-w-2xl">
-              A Vermonter who traded maple syrup for Brooklyn bagels. I've spent 7+ years helping ecommerce companies optimize their user experiences and product strategies. Since the emergence of mainstream genAI tools, I've been obsessively learning and building with AI. Now, I'm combining that passion with my product expertise to solve real problems for businesses and individuals.
+              A Vermonter who traded maple syrup for Brooklyn bagels. I&apos;ve spent 7+ years helping ecommerce companies optimize their user experiences and product strategies. Since the emergence of mainstream genAI tools, I&apos;ve been obsessively learning and building with AI. Now, I&apos;m combining that passion with my product expertise to solve real problems for businesses and individuals.
               </p>
             </motion.div>
             

@@ -6,7 +6,6 @@ import {
   ColorCategory, 
   getBgClass, 
   getBorderClass,
-  getBaseBg,
 } from '@/app/utils/tailwind-helper';
 
 // Career data from resume
