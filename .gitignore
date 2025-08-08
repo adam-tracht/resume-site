@@ -79,3 +79,5 @@ storybook-static/
 
 # Claude AI directory
 .claude/
+website/node_modules
+website/.next
