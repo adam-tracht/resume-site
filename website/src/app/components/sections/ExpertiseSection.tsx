@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { 
   getIconBgClass, 
   getIconTextClass, 
-  getBgClass, 
   ColorCategory
 } from '@/app/utils/tailwind-helper';
 

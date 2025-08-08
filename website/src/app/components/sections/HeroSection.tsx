@@ -22,7 +22,7 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                <span className="text-foreground">Hi, I'm Adam</span>
+                <span className="text-foreground">Hi, I&apos;m Adam</span>
               </h1>
             </motion.div>
             
