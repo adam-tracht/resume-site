@@ -11,17 +11,15 @@ import {
 } from '@/app/utils/tailwind-helper';
 
 // Define project types
-
 type Project = {
   id: string;
   title: string;
   description: string;
-  challenge: string;
-  approach: string;
-  outcomes: string[];
+  keyMetric?: string;
+  techStack: string[];
   image?: string;
-  videoUrl?: string;  // URL to YouTube, Vimeo, or direct video file
-  url?: string;      // Optional URL to the live project
+  videoUrl?: string;
+  url?: string;
 };
 
 // Project data
@@ -29,16 +27,9 @@ const projects: Project[] = [
   {
     id: 'canvasgenie-ai',
     title: 'CanvasGenie.ai',
-    description: 'Built an ecommerce platform for creating wall art through seamless integration between AI image generation and print-on-demand services.',
-    challenge: 'Creating custom artwork traditionally requires expensive professional artists or photographers. The challenge was building an end-to-end solution that handles AI image generation, storage, product visualization, cavnas selection and print fulfillment while managing complex API integrations and asynchronous processes.',
-    approach: 'Developed a Next.js application with OpenAI gpt-image-1 integration for image generation, implemented Vercel Blob Storage for image persistence, and created a custom product mockup system. Built a complete e-commerce flow with Printful API integration for product catalog management and Stripe for secure checkout. ',
-    outcomes: [
-      'Created an accessible platform for generating custom artwork at a fraction of traditional costs',
-      'Built a scalable image processing pipeline with efficient storage management',
-      'Implemented seamless integration with a print-on-demand fulfillment service',
-      'Developed interactive product visualization with multiple canvas and print options',
-      'Streamlined the user journey from idea to finished product on their wall'
-    ],
+    description: 'Ecommerce platform for creating wall art through seamless integration between AI image generation and print-on-demand services. Built end-to-end solution from AI image generation to doorstep delivery with seamless Stripe checkout and automated print fulfillment.',
+    keyMetric: 'Fraction of traditional custom art costs',
+    techStack: ['Next.js', 'OpenAI', 'Vercel Blob', 'Stripe', 'Printful API'],
     image: '/images/projects/canvasgenie.jpg',
     videoUrl: 'https://vimeo.com/1086625243?share=copy',
     url: 'https://canvasgenie.ai'
@@ -46,17 +37,9 @@ const projects: Project[] = [
   {
     id: 'analytics-dashboard',
     title: 'Turnkey Analytics Dashboard',
-    description: 'Developed a comprehensive, interactive analytics dashboard using Python, Streamlit, and Plotly that delivers multi-dimensional sales, inventory, and web metrics intelligence from Google Sheets data.',
-    challenge: 'Business stakeholders needed real-time access to complex retail analytics without relying on data specialists or expensive BI tools. Traditional reporting solutions were slow to implement, inflexible, and required technical expertise.',    
-    approach: "Built a scalable, universally adaptable retail analytics dashboard utilizing a standardized Google Sheets template that connects securely through service account authentication with simple sharing permissions. Built with python and advanced Plotly visualizations for trend analysis, distribution breakdowns, and comparative metrics.",
-    outcomes: [
-      'Created a turnkey analytics solution enabling companies of any size to gain enterprise-level capabilities without technical expertise',
-      'Improved data accessibility through intuitive filters and visualizations, empowering non-technical stakeholders',
-      'Developed tabs for multi-dimensional analysis across sales, returns, inventory, and web metrics, and filters for retailer, product, date, and category',
-      'Delivered scalable, cloud-ready architecture supporting scheduled refreshes and multi-user access',
-      'Enabled secure access through service account authentication with simple sharing permissions',
-      'Developed tabs for multi-dimensional analysis across sales, returns, inventory, and web metrics',
-    ],
+    description: 'Enterprise-level retail analytics for any business without technical expertise or expensive BI tools. Connects securely to Google Sheets data and delivers comprehensive sales, inventory, and web metrics through intuitive visualizations and filters.',
+    keyMetric: 'Enterprise capabilities for any business size',
+    techStack: ['Python', 'Streamlit', 'Plotly', 'Google Sheets API'],
     image: '/images/projects/analytics-dashboard.jpg',
     videoUrl: 'https://vimeo.com/manage/videos/1101038303',
     url: 'https://integrated-analytics.streamlit.app'
@@ -64,16 +47,9 @@ const projects: Project[] = [
   {
     id: 'stock-signal-analyzer',
     title: 'Stock Signal Analyzer',
-    description: 'Developed a web application that analyzes stock tickers using technical indicators to identify potential buy and sell signals for more informed trading decisions.',
-    challenge: 'Traders often struggle to efficiently analyze multiple technical indicators simultaneously, leading to missed opportunities or poor timing decisions. The challenge was creating an accessible platform that could process complex financial data, apply multiple technical indicators, and deliver actionable insights through clear visualizations and verbal summaries.',
-    approach: 'Built a Flask web application with Python backend that leverages yfinance API for market data. Implemented comprehensive technical analysis using the TA library for indicators like Bollinger Bands, RSI, and MACD. Created customizable trading presets for different investment strategies and developed a natural language processing system to translate technical indicators into human-readable insights.',
-    outcomes: [
-      'Created a responsive web interface that allows traders to quickly analyze stocks with customizable technical indicators',
-      'Implemented adjustable trading presets for both long-term and short-term trading strategies',
-      'Developed a verbal summary engine that translates complex technical indicators into actionable insights',
-      'Built an intuitive visualization system showing key indicators and signal strength',
-      'Designed a user-friendly experience for traders of all experience levels to make data-driven decisions'
-    ],
+    description: 'Makes complex technical analysis accessible to all traders by translating multiple indicators (Bollinger Bands, RSI, MACD) into clear buy/sell signals and human-readable insights. Features customizable trading presets for different investment strategies.',
+    keyMetric: 'Technical analysis made accessible',
+    techStack: ['Python', 'Flask', 'yfinance', 'TA Library'],
     image: '/images/projects/stock-screener.jpg',
     videoUrl: 'https://vimeo.com/1101033438?share=copy',
     url: 'https://stock-screener-gaa0.onrender.com/'
@@ -81,32 +57,29 @@ const projects: Project[] = [
   {
     id: 'ai-chatbot',
     title: 'Specialized AI Chatbot',
-    description: 'Built a specialized AI chatbot for DIGGS integrated with an extensive product and company knowledge base, trained to address a wide variety of high frequency customer inquiries.',
-    challenge: 'DIGGS products have a high consideration window and customers need quick access to product and policy information throughout their purchase journey. Customer support costs and return rates were high, and ticket resolution times left room for improvement.',
-    approach: 'Built an AI-powered chatbot leveraging large language models with advanced context filtering for cost-effective knowledge retrieval, acting as a conversational sales and support agent.',
-    outcomes: [
-      'TBD - will be updated after launch (July 2025)'
-    ],
+    description: 'AI-powered customer support chatbot for DIGGS that reduces support costs and improves customer experience. Trained on extensive product and company knowledge base to handle high-frequency inquiries throughout the customer journey.',
+    keyMetric: 'Launching July 2025',
+    techStack: ['LLM', 'Context Filtering', 'Knowledge Base'],
     image: '/images/projects/ai-chatbot.jpg',
     videoUrl: 'https://vimeo.com/1101049658?share=copy'
   },
   {
     id: 'uncertainty-prevalence',
-    title: 'Economic Uncertainty Analysis Dashboard',
-    description: 'Built a web application analyzing economic uncertainty mentions in global news media, with a scalable backend architecture adaptable to any term analysis.',
-    challenge: 'Analyzing the prevalence of "uncertainty" in economic news coverage required processing massive GDELT datasets from global sources without local storage infrastructure or excessive database usage, while creating an intuitive dashboard for exploring trends and correlations.',
-    approach: 'Developed a Python backend that streams GDELT Web NGrams 3.0 data in real-time, processing millions of news mentions without local storage. Built the analysis scripts to be configurable for any keyword through command-line parameters. Created a React/TypeScript dashboard with interactive time series charts, word clouds.',
-    outcomes: [
-      'Successfully analyzed economic uncertainty patterns across major news outlets',
-      'Built streaming architecture that processes millions of mentions without local storage',
-      'Created reusable analysis framework adaptable to any term via command-line configuration',
-      'Delivered interactive dashboard with time series analysis and co-occurrence insights',
-      'Established scalable foundation for future media monitoring projects'
-    ],
+    title: 'Economic Uncertainty Analysis',
+    description: 'Processes millions of global news mentions to analyze economic uncertainty trends without local storage infrastructure. Built with configurable architecture that adapts to analyze any keyword, delivering insights through interactive time series and word cloud visualizations.',
+    keyMetric: 'Millions of mentions processed',
+    techStack: ['Python', 'React', 'TypeScript', 'GDELT API'],
     image: '/images/uncertainty_prevalence.png',
     url: 'https://uncertainty-prevalence.vercel.app/'
   }
 ];
+
+// Tech stack badge component
+const TechBadge: React.FC<{ tech: string }> = ({ tech }) => (
+  <span className="inline-block px-2 py-1 text-xs font-medium bg-base-100 dark:bg-base-700 text-base-700 dark:text-base-300 rounded-md">
+    {tech}
+  </span>
+);
 
 // Project card component
 const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
@@ -116,7 +89,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-white dark:bg-base-800 rounded-xl shadow-md overflow-hidden flex flex-col h-full"
+      className="bg-white dark:bg-base-800 rounded-xl shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow"
     >
       {project.videoUrl ? (
         <div className="aspect-video">
@@ -144,36 +117,36 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
         </div>
       )}
       
-      <div className="p-6 flex-grow">        
+      <div className="p-6 flex-grow flex flex-col">        
         <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-        <p className="text-base-600 dark:text-base-300 mb-4">{project.description}</p>
+        
+        {project.keyMetric && (
+          <div className="mb-3">
+            <span className={`inline-flex items-center px-2 py-1 text-sm font-medium bg-data-dark text-white rounded-md`}>
+              💡 {project.keyMetric}
+            </span>
+          </div>
+        )}
+        
+        <p className="text-base-600 dark:text-base-300 mb-4 leading-relaxed flex-grow">
+          {project.description}
+        </p>
         
         <div className="mb-4">
-          <h4 className="text-sm font-semibold mb-1">Challenge:</h4>
-          <p className="text-sm text-base-600 dark:text-base-400">{project.challenge}</p>
-        </div>
-        
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold mb-1">Approach:</h4>
-          <p className="text-sm text-base-600 dark:text-base-400">{project.approach}</p>
-        </div>
-        
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold mb-1">Outcomes:</h4>
-          <ul className="list-disc pl-5 text-sm text-base-600 dark:text-base-400">
-            {project.outcomes.map((outcome, i) => (
-              <li key={i} className="mb-1">{outcome}</li>
+          <div className="flex flex-wrap gap-2">
+            {project.techStack.map((tech, i) => (
+              <TechBadge key={i} tech={tech} />
             ))}
-          </ul>
+          </div>
         </div>
         
         {project.url && (
-          <div className="mt-4">
+          <div className="mt-auto">
             <a 
               href={project.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`inline-flex items-center px-4 py-2 rounded-md text-sm font-medium ${getIconBgClass('ai')} ${getIconTextClass('ai')} hover:opacity-90 transition-opacity`}
+              className={`inline-flex items-center px-4 py-2 rounded-md text-sm font-medium bg-ecommerce-dark text-white hover:opacity-90 transition-opacity`}
             >
               View Live Project
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -183,12 +156,9 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
           </div>
         )}
       </div>
-      
     </motion.div>
   );
 };
-
-
 
 export const ProjectsSection: React.FC = () => {
   return (
@@ -203,7 +173,7 @@ export const ProjectsSection: React.FC = () => {
         >
           <h2 className="text-3xl font-bold mb-4">Project Showcase</h2>
           <p className="text-base-600 dark:text-base-400 max-w-2xl mx-auto">
-            Explore my key projects and achievements across ecommerce, UX, and data-driven growth initiatives.
+            Building solutions that solve real problems and deliver measurable value.
           </p>
         </motion.div>
         
