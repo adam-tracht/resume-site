@@ -30,9 +30,9 @@ const FormField: React.FC<{
           required={required}
           value={value}
           onChange={onChange}
-          className="w-full px-4 py-2 border border-base-300 dark:border-base-700 rounded-md 
+          className="w-full px-4 py-2 border border-base-700 rounded-md 
                    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
-                   bg-white dark:bg-base-800 text-base-900 dark:text-base-100"
+                   bg-base-300 text-base-700"
         />
       ) : (
         <textarea
@@ -43,9 +43,9 @@ const FormField: React.FC<{
           rows={rows}
           value={value}
           onChange={onChange}
-          className="w-full px-4 py-2 border border-base-300 dark:border-base-700 rounded-md 
+          className="w-full px-4 py-2 border border-base-700 rounded-md 
                    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
-                   bg-white dark:bg-base-800 text-base-900 dark:text-base-100"
+                   bg-base-300 text-base-700"
         />
       )}
     </div>
@@ -69,14 +69,14 @@ const ContactMethod: React.FC<{
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="flex items-center p-4 bg-white dark:bg-base-800 rounded-lg shadow-sm 
+      className="flex items-center p-4 bg-base-800 rounded-lg shadow-sm 
                 hover:shadow-md transition-all group"
     >
-      <div className="mr-4 text-primary-500 dark:text-primary-400 text-2xl group-hover:scale-110 transition-transform">
+      <div className="mr-4 text-primary-400 text-2xl group-hover:scale-110 transition-transform">
         {icon}
       </div>
       <div>
-        <h3 className="text-sm font-medium text-base-500 dark:text-base-400">{title}</h3>
+        <h3 className="text-sm font-medium text-base-400">{title}</h3>
         <p className="font-medium">{value}</p>
       </div>
     </motion.a>
@@ -207,7 +207,7 @@ export const ContactSection: React.FC = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-            <p className="text-base-600 dark:text-base-400 max-w-2xl mx-auto">
+            <p className="text-base-400 max-w-2xl mx-auto">
               Interested in discussing potential opportunities or collaborations? Feel free to reach out through any of the channels below or use the contact form.
             </p>
           </motion.div>
@@ -264,13 +264,13 @@ export const ContactSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="lg:col-span-3 bg-white dark:bg-base-800 p-6 rounded-lg shadow-md"
+              className="lg:col-span-3 bg-base-800 p-6 rounded-lg shadow-md"
             >
               <h3 className="text-xl font-bold mb-6">Send a Message</h3>
               
               {/* Success Message */}
               {status.success && (
-                <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-md">
+                <div className="mb-6 p-4 text-green-800 rounded-md">
                   <p className="font-medium">
                     Thank you for your message! I will get back to you soon.
                   </p>
@@ -279,7 +279,7 @@ export const ContactSection: React.FC = () => {
               
               {/* Error Message */}
               {status.error && (
-                <div className="mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-md">
+                <div className="mb-6 p-4 bg-red-900 text-red-100 rounded-md">
                   <p className="font-medium">Error: {status.error}</p>
                 </div>
               )}

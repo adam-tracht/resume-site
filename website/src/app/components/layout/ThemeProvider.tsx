@@ -8,6 +8,7 @@ type ThemeProviderProps = {
   children: React.ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
+  forceDarkMode?: boolean;
 };
 
 type ThemeProviderState = {
@@ -26,18 +27,28 @@ export function ThemeProvider({
   children,
   defaultTheme = 'system',
   storageKey = 'theme',
+  forceDarkMode = false,
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (typeof window !== 'undefined' ? 
-      (localStorage.getItem(storageKey) as Theme) || defaultTheme : 
-      defaultTheme)
+    () => {
+      if (forceDarkMode) return 'dark';
+      return (typeof window !== 'undefined' ? 
+        (localStorage.getItem(storageKey) as Theme) || defaultTheme : 
+        defaultTheme);
+    }
   );
 
   useEffect(() => {
     const root = window.document.documentElement;
     
     root.classList.remove('light', 'dark');
+    
+    // If forceDarkMode is true, always use dark theme
+    if (forceDarkMode) {
+      root.classList.add('dark');
+      return;
+    }
     
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
@@ -50,11 +61,14 @@ export function ThemeProvider({
     }
     
     root.classList.add(theme);
-  }, [theme]);
+  }, [theme, forceDarkMode]);
 
   const value = {
     theme,
     setTheme: (theme: Theme) => {
+      // If forceDarkMode is true, ignore theme changes
+      if (forceDarkMode) return;
+      
       localStorage.setItem(storageKey, theme);
       setTheme(theme);
     },

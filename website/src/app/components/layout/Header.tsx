@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ThemeToggle } from '../ui/ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
@@ -65,13 +64,11 @@ export function Header() {
             Resume
           </a>
           
-          {/* Theme Toggle */}
-          <ThemeToggle />
+          {/* Theme Toggle removed */}
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center space-x-4 md:hidden">
-          <ThemeToggle />
+        <div className="flex items-center md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-foreground p-2"

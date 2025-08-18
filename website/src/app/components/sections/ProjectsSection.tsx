@@ -76,7 +76,7 @@ const projects: Project[] = [
 
 // Tech stack badge component
 const TechBadge: React.FC<{ tech: string }> = ({ tech }) => (
-  <span className="inline-block px-2 py-1 text-xs font-medium bg-base-100 dark:bg-base-700 text-base-700 dark:text-base-300 rounded-md">
+  <span className="inline-block px-2 py-1 text-xs font-medium bg-base-700 text-base-300 rounded-md">
     {tech}
   </span>
 );
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-white dark:bg-base-800 rounded-xl shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow"
+      className="bg-base-800 rounded-xl shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow"
     >
       {project.videoUrl ? (
         <div className="aspect-video">
@@ -117,7 +117,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
         </div>
       )}
       
-      <div className="p-6 flex-grow flex flex-col">        
+      <div className="p-6 flex-grow bg-base-900 flex flex-col">        
         <h3 className="text-xl font-bold mb-3">{project.title}</h3>
         
         {project.keyMetric && (
@@ -128,7 +128,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
           </div>
         )}
         
-        <p className="text-base-600 dark:text-base-300 mb-4 leading-relaxed flex-grow">
+        <p className="text-base-300 mb-4 leading-relaxed flex-grow">
           {project.description}
         </p>
         
@@ -172,7 +172,7 @@ export const ProjectsSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold mb-4">Project Showcase</h2>
-          <p className="text-base-600 dark:text-base-400 max-w-2xl mx-auto">
+          <p className="text-base-400 max-w-2xl mx-auto">
             Building solutions that solve real problems and deliver measurable value.
           </p>
         </motion.div>

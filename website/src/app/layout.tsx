@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${robotoMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <ThemeProvider defaultTheme="dark" storageKey="adam-tracht-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="adam-tracht-theme" forceDarkMode={true}>
           <Header />
           <main className="flex-grow pt-20">
             {children}
